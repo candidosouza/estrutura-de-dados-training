@@ -8,19 +8,15 @@ var SequentialSearch = function () {
     function SequentialSearch(content, list, search) {
         _classCallCheck(this, SequentialSearch);
 
-        this.content = content;
-        this.list = list;
-        this.search = search;
+        this._content = content;
+        this._list = list;
+        this._search = search;
+        Object.freeze(this);
     }
 
     _createClass(SequentialSearch, [{
-        key: "getContent",
-        value: function getContent() {
-            return this.content.textContent = this.getSequentialSearch(this.list, this.search);
-        }
-    }, {
-        key: "getSequentialSearch",
-        value: function getSequentialSearch() {
+        key: "sequentialSearch",
+        value: function sequentialSearch() {
             var list = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
             var search = arguments[1];
 
@@ -31,6 +27,11 @@ var SequentialSearch = function () {
                     if (list[i] == search) return i;
                 }
             }
+        }
+    }, {
+        key: "content",
+        get: function get() {
+            return this._content.textContent = this.sequentialSearch(this._list, this._search);
         }
     }]);
 

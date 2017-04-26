@@ -1,15 +1,17 @@
 class SequentialSearch {
+
     constructor(content, list, search) {
-        this.content = content;
-        this.list = list;
-        this.search = search;
+        this._content = content;
+        this._list = list;
+        this._search = search;
+        Object.freeze(this);
     }
 
-    getContent() {
-        return this.content.textContent = this.getSequentialSearch(this.list, this.search);
+    get content() {
+        return this._content.textContent = this.sequentialSearch(this._list, this._search);
     }
 
-    getSequentialSearch(list = [], search) {
+    sequentialSearch(list = [], search) {
         if (list.length < search) {
             return false;
         } else {
