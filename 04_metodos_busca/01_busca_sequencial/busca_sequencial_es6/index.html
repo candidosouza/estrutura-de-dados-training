@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Busca Sequencial</title>
+</head>
+<body>
+
+<div id="content"></div>
+
+<script src="js/app/model/SequentialSearch.js"></script>
+<script>
+    let list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let ss = new SequentialSearch(document.querySelector('#content'), list, 7);
+    ss.getContent();
+</script>
+</body>
+</html>
